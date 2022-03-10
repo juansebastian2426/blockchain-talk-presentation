@@ -4,22 +4,569 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Blockchain, Más allá de una criptomoneda</title>
 
+		<script src="https://kit.fontawesome.com/93a96bf4eb.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/blood.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			.social-network {
+				display: flex;
+				justify-content: center;
+				gap: 30px;
+			}
+			.block {
+				border: 1px solid;
+				max-width: 400px;
+				margin: auto;
+			}
+			.block > .field {
+				border-bottom: 1px solid;
+				text-align: left;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				font-size: 20px;
+				align-items: center;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			.block .title {
+				font-weight: bold;
+				margin-right: 10px;
+			}
+			.block .header {
+				text-align: center;
+			}
+			.block .header-title {
+				font-weight: bold;
+				padding: 0 15px;
+			}
+			.block-list {
+				display: flex;
+				gap: 20px;
+			}
+			.block-list .chain {
+				display: flex;
+				align-items: center;
+			}
+			.block-list .block {
+				max-width: initial;
+				width: 100%;
+			}
+			.lmi .s1 {
+				display: flex;
+				gap: 20px;
+				justify-content: center;
+				padding-bottom: 100px;
+			}
+			.lmi .s1 > i {
+				font-size: 100px;
+			}
+			.lmi .s2 {
+				display: flex;
+				gap: 30px;
+				margin: 20px;
+			}
+			.lmi .s2 small {
+				margin-right: 30px;
+			}
+			.lmi .s3 {
+				display: flex;
+				gap: 30px;
+				margin: 20px;
+				margin-top: 50px;
+			}
+			.lmi .s3 small {
+				margin-right: 165px;
+			}
+			.lmi .block {
+				width: 20px;
+				height: 20px;
+				background: white;
+			}
+			.rdp2p {
+				
+			}
+			.rdp2p .block {
+				width: 20px;
+				height: 20px;
+				background: white;
+			}
+			.rdp2p-pc-1 {
+				display: flex;
+				justify-content: center;
+			}
+			.rdp2p-pc-1-pc {
+				margin-right: 20px;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section
+					data-background-image="lib/images/blockchain-bg-2.png">
+					<div>
+						<h3>Blockchain, más allá de una criptomoneda</h3>
+						<div>
+							<p>Juan Sebastián Valencia Jiménez</p>
+							<p>Desarrollador de software</p>
+						</div>
+						<div class="social-network">
+							<div class="social-network__item">
+								<i class="fa-brands fa-youtube"></i>
+								tuttodev
+							</div>
+							<div class="social-network__item">
+								<i class="fa-brands fa-instagram"></i>
+								tuttodev
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div style="display: flex; flex-direction: column; justify-content: flex-start;align-items: flex-start; max-width: 800px;margin: auto;font-size: 35px;">
+						<div>
+							* ¿Que es Blockchain?
+						</div>
+						<div>
+							* Como se ve un bloque
+						</div>
+						<div>
+							* Como se une la cadena
+						</div>
+						<div>
+							* Ejemplo Libro mayor inmutable <br />
+						</div>
+						<div>
+							* Red distribuida P2P <br />
+						</div>
+						<div>
+							* Funcionamiento del minado: Nonce <br />
+						</div>
+						<div>
+							* Funcionamiento del minado: Puzzle criptográfico <br />
+						</div>
+						<div>
+							* Demo Blockchain
+						</div>
+					</div>
+				</section>
+				<section>
+					<div style="max-width: 960px; margin: auto;">
+						<h3>¿Que rayos es Blockchain?</h3>
+						<p>
+							El blockchain (Cadena de bloques) es una lista (cadena) de registros en continuo crecimiento
+							los cuales están vinculados y asegurados criptográficamente
+						</p>
+					</div>
+				</section>
+				<section>
+					<div class="block">
+						<div class="fragment field" data-fragment-index="1">
+							<p class="title">
+								Bloque # 👉
+							</p>
+							 56
+						</div>
+						<div class="fragment field" data-fragment-index="2">
+							<p class="title">Nonce 👉</p>
+							1
+						</div>
+						<div class="fragment field" data-fragment-index="3">
+							<p class="title">Data 👉</p>
+							"hello world"
+						</div>
+						<div class="fragment field" data-fragment-index="4">
+							<p class="title">Prev.Hash 👉</p>
+							0000b94d27b99
+						</div>
+						<div class="fragment field" data-fragment-index="5">
+							<p class="title">Hash 👉</p>
+							0000da7dabfac
+						</div>
+					</div>
+				</section>
+				<section>
+					<p class="fragment" data-fragment-index="7">"Los bloques están criptográficamente vinculados"</p>
+					<div class="block-list">
+						<div class="block fragment" data-fragment-index="1">
+							<div class="header">
+								<p class="header-title">Genesis Block</p>
+							</div>
+							<div class="field">
+								<p class="title">
+									Bloque #
+								</p>
+								 1
+							</div>
+							<div class="field">
+								<p class="title">Nonce</p>
+								456
+							</div>
+							<div class="field">
+								<p class="title">Data</p>
+								...
+							</div>
+							<div class="field">
+								<p class="title">Prev.Hash</p>
+								00000000
+							</div>
+							<div class="field">
+								<p class="title">Hash</p>
+								0000343d
+							</div>
+						</div>
+
+						<div class="chain fragment" data-fragment-index="3">
+							<i class="fa-solid fa-link"></i>
+						</div>
+
+						<div class="block fragment" data-fragment-index="2">
+							<div class="header">
+								<p class="header-title">Bloque #2</p>
+							</div>
+							<div class="field">
+								<p class="title">
+									Bloque #
+								</p>
+								 2
+							</div>
+							<div class="field">
+								<p class="title">Nonce</p>
+								1003
+							</div>
+							<div class="field">
+								<p class="title">Data</p>
+								...
+							</div>
+							<div class="field">
+								<p class="title">Prev.Hash</p>
+								0000343d
+							</div>
+							<div class="field">
+								<p class="title">Hash</p>
+								0000y6as
+							</div>
+						</div>
+						
+						<div class="chain fragment" data-fragment-index="5">
+							<i class="fa-solid fa-link"></i>
+						</div>
+
+						<div class="block fragment" data-fragment-index="4">
+							<div class="header">
+								<p class="header-title">Bloque #3</p>
+							</div>
+							<div class="field">
+								<p class="title">
+									Bloque #
+								</p>
+								 3
+							</div>
+							<div class="field">
+								<p class="title">Nonce</p>
+								3467
+							</div>
+							<div class="field">
+								<p class="title">Data</p>
+								...
+							</div>
+							<div class="field">
+								<p class="title">Prev.Hash</p>
+								0000y6as
+							</div>
+							<div class="field">
+								<p class="title">Hash</p>
+								0000edsp
+							</div>
+						</div>
+
+						<div class="chain fragment" data-fragment-index="6">
+							<i class="fa-solid fa-link"></i>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Libro Mayor Inmutable</h3>
+					<div class="lmi">
+						<div class="s1">
+							<i class="fragment fa-solid fa-money-bill-1-wave" data-fragment-index="1"></i>
+							<i class="fragment fa-solid fa-arrow-right" data-fragment-index="2"></i>
+							<i class="fragment fa-solid fa-house" data-fragment-index="3"></i>
+							<i class="fragment fa-solid fa-arrow-right" data-fragment-index="4"></i>
+							<i class="fragment fa-solid fa-scroll" data-fragment-index="5"></i>
+							<i class="fragment fa-solid fa-arrow-right" data-fragment-index="6"></i>
+							<i class="fragment fa-solid fa-building-columns" data-fragment-index="7"></i>
+						</div>
+						<div class="fragment s2" data-fragment-index="8">
+							<small>
+								Libro mayor tradicional
+							</small>
+							<i class="fa-solid fa-book-open"></i>
+							<i class="fragment fa-solid fa-arrow-right" data-fragment-index="9"></i>
+							<i class="fragment fa-solid fa-skull-crossbones" data-fragment-index="10"></i>
+							<i class="fragment fa-solid fa-arrow-right" data-fragment-index="11"></i>
+							<i class="fragment fa-solid fa-shop-slash" data-fragment-index="12"></i>
+						</div>
+						<div class="fragment s3" data-fragment-index="13">
+							<small>
+								blockchain
+							</small>
+							<div style="display: flex; gap:5px;align-items: center;">
+								<div class="block"></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;"></i>
+								<div class="fragment block" data-fragment-index="14"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="15"></i>
+								<div class="fragment block" data-fragment-index="16"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="17"></i>
+								<div class="fragment block" data-fragment-index="18"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="19"></i>
+								<div class="fragment block" data-fragment-index="20"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="21"></i>
+								<div class="fragment block" data-fragment-index="22"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="23"></i>
+								<div class="fragment block" data-fragment-index="24"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="25"></i>
+								<div class="fragment block" data-fragment-index="26"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="27"></i>
+								<div class="fragment block" data-fragment-index="28" style="background: red;">
+									<i class="fragment fa-solid fa-skull-crossbones" style="font-size: 15px;" data-fragment-index="29"></i></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="30"></i>
+								<div class="fragment block" data-fragment-index="31" style="background: red;"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="32"></i>
+								<div class="fragment block" data-fragment-index="33" style="background: red;"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="34"></i>
+								<div class="fragment block" data-fragment-index="35" style="background: red;"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="36"></i>
+								<div class="fragment block" data-fragment-index="37" style="background: red;"></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Red distribuída P2P</h3>
+					<div class="rdp2p">
+						<div class="rdp2p-pc-1">
+							<div class="rdp2p-pc-1-pc">
+								<i class="fa-solid fa-laptop"></i>
+							</div>
+							<div class="fragment" style="display: flex; gap:5px;align-items: center;" data-fragment-index="38">
+								<div class="block"></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;"></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="fragment block"  style="background: red;" data-fragment-index="39">
+									<i class="fa-solid fa-skull-crossbones" style="font-size: 15px;" ></i></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="39"></i>
+								<div class="fragment block"  style="background: red;" data-fragment-index="39"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="39"></i>
+								<div class="fragment block"  style="background: red;" data-fragment-index="39"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="39"></i>
+								<div class="fragment block"  style="background: red;" data-fragment-index="39"></div>
+								<i class="fragment fa-solid fa-link" style="font-size: 15px;" data-fragment-index="39"></i>
+								<div class=" fragment block"  style="background: red;" data-fragment-index="39"></div>
+							</div>
+						</div>
+						<div class="rdp2p-pc-1">
+							<div class="rdp2p-pc-1-pc">
+								<i class="fa-solid fa-laptop"></i>
+							</div>
+							<div class="fragment" style="display: flex; gap:5px;align-items: center;" data-fragment-index="38">
+								<div class="block"></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;"></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+							</div>
+						</div>
+						<div class="rdp2p-pc-1">
+							<div class="rdp2p-pc-1-pc">
+								<i class="fa-solid fa-laptop"></i>
+							</div>
+							<div class="fragment" style="display: flex; gap:5px;align-items: center;" data-fragment-index="38">
+								<div class="block"></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;"></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+							</div>
+						</div>
+						<div class="rdp2p-pc-1">
+							<div class="rdp2p-pc-1-pc">
+								<i class="fa-solid fa-laptop"></i>
+							</div>
+							<div class="fragment" style="display: flex; gap:5px;align-items: center;" data-fragment-index="38">
+								<div class="block"></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;"></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+								<i class="fa-solid fa-link" style="font-size: 15px;" ></i>
+								<div class="block" ></div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h3>Funcionamiento del minado: Nounce</h3>
+					<div style="display: flex;align-items: center; justify-content: center;gap: 10px">
+						<div>
+							<i class="fa-solid fa-link"></i>
+						</div>
+						<div class="block" style="margin: 10px;">
+							<div class="field">
+								<p class="title">
+									Bloque # 👉
+								</p>
+								<div class="r-stack">
+									<p class="fragment fade-out" data-fragment-index="0">11</p>
+									<p class="fragment current-visible" data-fragment-index="0">355</p>
+									<p class="fragment">87</p>
+								</div>
+							</div>
+							<div class="field">
+								<p class="title">Nonce 👉</p>
+								1
+							</div>
+							<div class="field">
+								<p class="title">Data 👉</p>
+								<small>
+									JuanSe -> David 0.005 BTC <br />
+									Monica -> JuanSe 1 BTC <br />
+									Dahina -> JuanSe 200 BTC
+								</small>
+							</div>
+							<div class="field">
+								<p class="title">Prev.Hash 👉</p>
+								0000b94d27b99
+							</div>
+							<div class="field">
+								<p class="title">Hash 👉</p>
+								<div class="r-stack">
+									<p class="fragment fade-out" data-fragment-index="0">8b3838efb648773</p>
+									<p class="fragment current-visible" data-fragment-index="0">f4bf9f7fcbedabafd</p>
+									<p class="fragment">171b54475c2ade8</p>
+								</div>							
+							</div>
+						</div>
+						<div>
+							<i class="fa-solid fa-link"></i>
+						</div>
+					</div>
+
+				</section>
+				<section>
+					<h6>Funcionamiento del minado: Puzzle criptografico</h6>
+					<small class="fragment" data-fragment-index="3">
+						<i class="fa-solid fa-x"></i>
+						b221d9dbb083a7f33428d7c2a3c3198ae925614d70210e28716ccaa7cd4ddb79
+					</small>
+					<small class="fragment" data-fragment-index="4">
+						<i class="fa-solid fa-x"></i>
+						bd77c0ee18f1ed70f01b9fa0af05085f89179ea19567d801c3bc375341add6a0
+					</small>
+					
+					<small class="fragment" data-fragment-index="5">
+						<i class="fa-solid fa-check" style="color: green"></i>
+						0000000000000788740755e8d1a6e4e5d3f3579b016db0f5437eded1001f3952
+					</small>
+					<div class="fragment" data-fragment-index="1" style="border: 1px solid;height: 450px; display: flex; flex-direction: column-reverse;position: relative;">
+						<div class="fragment" data-fragment-index="3" style="width: 30px;height: 30px;position: absolute;top: 10px;left:20px;background: red;border-radius: 50%;">
+							<i class="fa-solid fa-x"></i>
+						</div>
+						<div class="fragment" data-fragment-index="4" style="width: 30px;height: 30px;position: absolute;top: 50px;left:900px;background: red;border-radius: 50%;">
+							<i class="fa-solid fa-x"></i>
+						</div>
+						<div class="fragment" data-fragment-index="5" style="width: 30px;height: 30px;position: absolute;top: 400px;left:500px;background: red;border-radius: 50%;">
+							<i class="fa-solid fa-check" style="color: green"></i>
+						</div>
+
+						<div class="fragment" data-fragment-index="2" style="border-bottom: 1px solid;margin-bottom: 100px;">
+							Objetivo (0000)
+						</div>
+					</div>
+				</section>
+				<section>
+					<a href="https://tools.superdatascience.com/blockchain/" target="_black">DEMO BLOCKCHAIN</a>
+				</section>
 			</div>
 		</div>
+
 
 		<script src="dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
@@ -31,7 +578,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				width: '100%',
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
